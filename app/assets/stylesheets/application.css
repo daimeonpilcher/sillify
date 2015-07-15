@@ -13,3 +13,6 @@
  *= require bootstrap.min
  *= require_self
  */
+body {
+	padding:10px;
+}
