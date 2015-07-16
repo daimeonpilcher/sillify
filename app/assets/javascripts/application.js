@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.highlight-5
 //= require bootstrap.min
 //= require welcome
 //= require_self
