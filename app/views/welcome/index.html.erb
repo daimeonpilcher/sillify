@@ -14,7 +14,7 @@
 		<!-- Exclude KV pairs if they are smaller than 3 letters or occur less than twice or the word contains digits -->
 		<% if ((frequency >= 2) && (word.length >= 3)) && (word != word.match('/\d+/')) %>
 			<tr>
-				<td><input class="checkbox" type="checkbox" id='<%= "#{word}" %>'</td>
+				<td><input class="checkbox" type="checkbox" id='<%= "#{word}" %>'></td>
 				<td><%= "#{word}" %></td>
 				<td><%= "#{frequency}" %></td>
 				<td>
