@@ -23,6 +23,6 @@ $( window ).load(function() {
   		
   		$('#article').highlight($id+'')
   	}
- 	if($(':checkbox').not(this).prop('checked', false).closest('span').removeClass('highlight');
-  	})
+ $(':checkbox').not(this).prop('checked', false).closest('span').removeClass('highlight');
+  })
 });
