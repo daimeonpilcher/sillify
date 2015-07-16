@@ -1,0 +1,40 @@
+<!-- Render the article -->
+<div id="article"><%= @article %></div>
+<!-- Render the Table -->
+<form>
+<table border="1px">
+	<tr>
+		<th><input type="checkbox" name="Select All"></th>
+		<th> Word </th>
+		<th> Frequency </th>
+		<th> Word Type </th>
+	</tr>
+	<!-- Render Key value pairs in table -->
+	<% @word_freq.each_pair do |word, frequency| %>
+		<!-- Exclude KV pairs if they are smaller than 3 letters or occur less than twice or the word contains digits -->
+		<% if ((frequency >= 2) && (word.length >= 3)) && (word != word.match('/\d+/')) %>
+			<tr>
+				<td><input class="checkbox" type="checkbox" id='<%= "#{word}" %>'</td>
+				<td><%= "#{word}" %></td>
+				<td><%= "#{frequency}" %></td>
+				<td>
+					<select>
+						<option value="">Select a Value</option>
+						<option value="noun">Noun</option>
+						<option value="verb">Verb</option>
+						<option value="adverb">Adverb</option>
+						<option value="adjective">Adjective</option>
+						<option value="Name">Name</option>
+						<option value="place">Place</option>
+						<option value="preposition">Preposition</option>
+						<option value="pronoun">Pronoun</option>
+						<option value="conjuction">Conjunction</option>
+						<option value="interjection">Interjection</option>
+					</select>
+				</td>
+			<tr>
+		<% end %>
+	<% end %>
+</table>
+<button>Next</button>
+</form>
