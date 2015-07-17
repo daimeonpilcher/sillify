@@ -4,8 +4,8 @@
 $( window ).load(function() {
   $('input.checkbox').change(function(){
   	if($(this).is(':checked')){
-  		var $id = $(this).attr('id')
-		var re = new RegExp($id+' ', "ig");
+  		$id = $(this).attr('id')
+		// var re = new RegExp('\\b('+$id+')\\b', "ig");
 		// $('#article').children().each(function() {
 		// 	$('#article').filter(':contains('+$id+')').each(function () {
 	 //    		$(this).html($(this).text().replace(re, '<span class="highlight">'+$id+'</span>'));
@@ -21,8 +21,14 @@ $( window ).load(function() {
 		// 	console.log("Something happend", re, $id)
 		// })
   		
-  		$('#article').highlight($id+'')
+  		// added jquery.highlight-5.js to vendor assets
+  		$('#article').highlight($id+' ')
   	}
- $(':checkbox').not(this).prop('checked', false).closest('span').removeClass('highlight');
+  	if(!$(this).is(':checked')){
+  		$id = $(this).attr('id')
+  		Array.prototype.forEach.call(document.querySelectorAll(".highlight."+$id), function(el){
+  		   el.outerHTML = el.textContent;
+  		})
+  	}
   })
 });

@@ -22,7 +22,7 @@ jQuery.fn.highlight = function(pat) {
    pos -= (node.data.substr(0, pos).toUpperCase().length - node.data.substr(0, pos).length);
    if (pos >= 0) {
     var spannode = document.createElement('span');
-    spannode.className = 'highlight';
+    spannode.className = 'highlight '+$id;
     var middlebit = node.splitText(pos);
     var endbit = middlebit.splitText(pat.length);
     var middleclone = middlebit.cloneNode(true);
@@ -44,7 +44,8 @@ jQuery.fn.highlight = function(pat) {
 };
 
 jQuery.fn.removeHighlight = function() {
- return this.find("span.highlight").each(function() {
+  debugger
+ return this.find("span.highlight."+$id).each(function() {
   this.parentNode.firstChild.nodeName;
   with (this.parentNode) {
    replaceChild(this.firstChild, this);
