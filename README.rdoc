@@ -1,25 +1,49 @@
 == README
+Sillify is an app that makes reading the news a fun and interactive game.  It allows users to create a MadLib(tm) style game out of a news article.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WARNING: This app is still in its infancy stages and will require some tweaking.
 
-Things you may want to cover:
+Current Abilities:
+-Able to scrape a CNN news site by hard-coding the URL into the controller.
+-Able to see a list of common words used in the article
+-Able to select and highlight the words you want your friens to change.
+
+Future Abilities:
+-Bookmarklet to be able to send page to Sillify
+-User will be able to sign in using Google, Facebook, or Twitter
+-User will be able to select the words from the story and generate a URL he/she can then share with friends through facebook, twitter, or Google+
+-User (recipient) will receive a form with blanks to fill in the nouns, adjectives, verbs, etc...
+-User (recipient) will be able to read the newly created news story and share with friens (or delete)
+-Users will be able to read previously "Sillified" articles.
+-Users will be able to vote up or down "Sillified" articles.
+-Users will see a list of articles ranked by number of Up-Votes
+-Users can share funny articles or create their own
+-Users will see a list of top news stories they can "Sillify"
+-Users can click the link and begin generating an article to share with friends.
+
 
 * Ruby version
+  - Ruby 2.2.1
 
 * System dependencies
+  - Nokogiri
+  - Postgres
+  - Rails
 
-* Configuration
 
 * Database creation
 
 * Database initialization
-
-* How to run the test suite
+  - rake db:create
+  - rake db:migrate
 
 * Services (job queues, cache servers, search engines, etc.)
+  - For now only able to use CNN.  This is a limitation of scraping.
 
 * Deployment instructions
+  - Clone this repository to your local machine
+  - Bundle Install the gems
+  - rake the databases
 
 * ...
 
