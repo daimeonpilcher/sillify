@@ -31,4 +31,7 @@ $( window ).load(function() {
   		})
   	}
   })
+	$('select.select_words').change(function(){
+		$('.highlight.' + $(this).attr('data-id')).attr('data-value', $(this).val())
+	})
 });
