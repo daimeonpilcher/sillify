@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 	root 'welcome#index'
-	resources :user, :sessions, :results, :blanks, :words	
+	resources :user, :sessions, :sillified, :blanks, :story	
 
 end
 
